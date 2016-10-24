@@ -5,6 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "nodemon server/server.js --exec babel-node --presets es2015,stage-2",
+    "python_service": "python dictionary_service/app.py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Henry Lyford",
