@@ -823,6 +823,11 @@
       "from": "domain-browser@>=1.1.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/domain-browser/-/domain-browser-1.1.7.tgz"
     },
+    "dotenv": {
+      "version": "2.0.0",
+      "from": "dotenv@latest",
+      "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-2.0.0.tgz"
+    },
     "dottie": {
       "version": "1.1.1",
       "from": "dottie@>=1.0.0 <2.0.0",
@@ -2241,7 +2246,20 @@
     "node-libs-browser": {
       "version": "0.6.0",
       "from": "node-libs-browser@>=0.6.0 <0.7.0",
-      "resolved": "https://registry.npmjs.org/node-libs-browser/-/node-libs-browser-0.6.0.tgz"
+      "resolved": "https://registry.npmjs.org/node-libs-browser/-/node-libs-browser-0.6.0.tgz",
+      "dependencies": {
+        "url": {
+          "version": "0.10.3",
+          "from": "url@>=0.10.1 <0.11.0",
+          "resolved": "https://registry.npmjs.org/url/-/url-0.10.3.tgz",
+          "dependencies": {
+            "punycode": {
+              "version": "1.3.2",
+              "from": "punycode@1.3.2"
+            }
+          }
+        }
+      }
     },
     "node-uuid": {
       "version": "1.4.7",
@@ -3001,9 +3019,9 @@
       "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz"
     },
     "url": {
-      "version": "0.10.3",
-      "from": "url@>=0.10.1 <0.11.0",
-      "resolved": "https://registry.npmjs.org/url/-/url-0.10.3.tgz",
+      "version": "0.11.0",
+      "from": "url@latest",
+      "resolved": "https://registry.npmjs.org/url/-/url-0.11.0.tgz",
       "dependencies": {
         "punycode": {
           "version": "1.3.2",
