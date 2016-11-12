@@ -27,6 +27,7 @@
     "babel-core": "^6.17.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-2": "^6.17.0",
+    "nodemon": "^1.11.0",
     "shrinkwrap": "^0.4.0",
     "webpack": "^1.13.2"
   }
