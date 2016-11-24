@@ -27,6 +27,7 @@ def word(word):
 		# lower case the word
 		# remove white spaces
 		word = word.lower().strip()
+		# **** class for making new word objects
 		class FinalWordObject(object):
 				# word = ""
 				# definition = 0
@@ -46,15 +47,10 @@ def word(word):
 		definitionArray = [{ "textProns": [], "sourceDictionary": "ahd-legacy", "exampleUses": [], "relatedWords": [], "labels": [],"citations": [], "word": "smile","partOfSpeech": "noun", "sequence": "0", "attributionText": "from The American Heritage Dictionary of the English Language, 4th Edition", "text": "A facial expression characterized by an upward curving of the corners of the mouth and indicating pleasure, amusement, or derision.", "score": 0}]
 		definitionArray = definitionArray[0]
 
-		finalWordObject = make_wordObject(definitionArray['word'], definitionArray['text'], definitionArray['partOfSpeech'])
-		# receive response
 		# make an object for the response
 			# { word: str, defintion: str, sentence: str, partOfSpeech: str }
+		finalWordObject = make_wordObject(definitionArray['word'], definitionArray['text'], definitionArray['partOfSpeech'])
 
-		# return object to router
-
-		# send the word to the controller 'receiveWord'
-		# response = receiveWord(word)
 		# return response
 		return finalWordObject
 
