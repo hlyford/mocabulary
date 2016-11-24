@@ -3,14 +3,12 @@ from flask import request
 from receiveWord import receive_word
 from wordnik import *
 # client connection to the Wordnik API
-# apiUrl = 'http://api.wordnik.com/v4'
-# apiKey = 'YOUR API KEY HERE'
-# client = swagger.ApiClient(apiKey, apiUrl)
+apiUrl = 'http://api.wordnik.com/v4'
+apiKey = 'd3449b6e48240abeb260609f3b105482bd88b51000ad3270c'
+client = swagger.ApiClient(apiKey, apiUrl)
 
-# # connect to word defining
-# wordApi = WordApi.WordApi(client)
-# example = wordApi.getTopExample('irony')
-# print example.text
+# connect to word defining
+wordApi = WordApi.WordApi(client)
 
 app = Flask(__name__)
 
@@ -23,7 +21,6 @@ def index():
 
 @app.route('/word/<word>', methods=['GET', 'POST'])
 def word(word):
-		word = "Smile"
 		# lower case the word
 		# remove white spaces
 		word = word.lower().strip()
@@ -43,9 +40,10 @@ def word(word):
 		    return wordObject
 
 		# send the word to wordnik API and get the
-		# definitionResponse = wordApi.getDefinitions(self, word, {limit: 1});
-		definitionArray = [{ "textProns": [], "sourceDictionary": "ahd-legacy", "exampleUses": [], "relatedWords": [], "labels": [],"citations": [], "word": "smile","partOfSpeech": "noun", "sequence": "0", "attributionText": "from The American Heritage Dictionary of the English Language, 4th Edition", "text": "A facial expression characterized by an upward curving of the corners of the mouth and indicating pleasure, amusement, or derision.", "score": 0}]
-		definitionArray = definitionArray[0]
+		definitionResponse = wordApi.getDefinitions(word);
+		# definitionArray = [{ "textProns": [], "sourceDictionary": "ahd-legacy", "exampleUses": [], "relatedWords": [], "labels": [],"citations": [], "word": "smile","partOfSpeech": "noun", "sequence": "0", "attributionText": "from The American Heritage Dictionary of the English Language, 4th Edition", "text": "A facial expression characterized by an upward curving of the corners of the mouth and indicating pleasure, amusement, or derision.", "score": 0}]
+		# definitionArray = definitionArray[0]
+		return definitionResponse
 
 		# make an object for the response
 			# { word: str, defintion: str, sentence: str, partOfSpeech: str }
