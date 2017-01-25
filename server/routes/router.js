@@ -17,7 +17,6 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.route('/').get( (req, res) => {
 	res.send('hello world!');
 });
-
 router.route('/word/').get(function(req, res) {
 	let word = req.query.Body, phoneNumber = req.query.From;
 	let formData = {word: word};
@@ -26,6 +25,7 @@ router.route('/word/').get(function(req, res) {
 
 	// send to python microservice
 	request.post({url: pythonUrl + 'word' + '/' + word, formData: formData}, (error, response, body) => {
+		console.log('in python response');
 	  if (!error && response.statusCode == 200) {
 	    twilioController.sendResponse(phoneNumber, body, res, () =>{
 	    	// body = { word: word, defitnion: defintion, part_of_speech: , sentence: sentence }

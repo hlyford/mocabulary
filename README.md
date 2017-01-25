@@ -5,7 +5,6 @@ Scripts:
 
 
 Requirements:
-- npm install wordnik
-- npm install nodemon
-- Have Postgres running in the background prior to starting the app
+- npm install -g nodemon
+- Have Postgres running in the background prior to starting the app (getting postgres via Homebrew is probably easiest)
 
